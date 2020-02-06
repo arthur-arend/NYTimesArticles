@@ -1,5 +1,8 @@
-<h2 mat-dialog-title>Title</h2>
+<mat-card-subtitle>{{data.news_desk}}</mat-card-subtitle>
+<h2 mat-dialog-title>{{data.headline.main}}</h2>
 
 <mat-dialog-content>
-    {{data._id}}
+    {{data.web_url}}
+    {{data.byline.original}}
 </mat-dialog-content>
+

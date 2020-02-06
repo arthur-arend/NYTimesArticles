@@ -10,15 +10,30 @@ import { ArticleDialogComponent } from '../article-dialog/article-dialog.compone
 })
 export class ArticleListComponent implements OnInit {
   articles: Array<any>
-  pageActual: number
-  modalShow: boolean
+  counter: number = 0
 
   constructor(private apiService: APIService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.BuildList();
+    this.BuildList(this.counter)
   }
 
+  nextPage(){
+    this.counter++
+
+    this.BuildList(this.counter)
+    console.log(this.counter)
+  }
+
+  previousPage(){
+    if(this.counter > 0){
+      this.counter--
+      
+      this.BuildList(this.counter)
+      console.log(this.counter)
+
+    }
+}
   
   openDialog(articleClicked): void {
     const dialogRef = this.dialog.open(ArticleDialogComponent, {
@@ -26,13 +41,13 @@ export class ArticleListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed')
     });
   }
 
- BuildList() {
-    this.apiService.getArticles().subscribe((article: any) => {
-      this.articles = article.response.docs;
+ BuildList(page) {
+    this.apiService.getArticles(this.counter).subscribe((article: any) => {
+      this.articles = article.response.docs
     });
   }
 

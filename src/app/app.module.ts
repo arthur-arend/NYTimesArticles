@@ -3,18 +3,16 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import {MatCardModule, MatDialogModule} from '@angular/material';
+import { MatCardModule, MatDialogModule, MatButtonModule } from '@angular/material';
 import { ArticleListComponent } from '../components/article-list/article-list.component';
-import { SideMenuComponent } from '../components/side-menu/side-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ArticleDialogComponent } from '../components/article-dialog/article-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleListComponent,
-    SideMenuComponent,
     ArticleDialogComponent
   ],
   imports: [
@@ -23,6 +21,7 @@ import { ArticleDialogComponent } from '../components/article-dialog/article-dia
     HttpClientModule,
     MatCardModule,
     MatDialogModule,
+    MatButtonModule,
     NgxPaginationModule
     
   ],
