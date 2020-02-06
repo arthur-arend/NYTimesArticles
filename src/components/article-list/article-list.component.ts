@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from '../../api.service';
+import { MatDialog } from '@angular/material';
+import { ArticleDialogComponent } from '../article-dialog/article-dialog.component';
 
 @Component({
   selector: 'app-article-list',
@@ -11,22 +13,22 @@ export class ArticleListComponent implements OnInit {
   pageActual: number
   modalShow: boolean
 
-  constructor(private apiService: APIService) { }
+  constructor(private apiService: APIService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.BuildList();
   }
+
   
-  modalController(articleClicked = <any>[]){
-    this.modalShow = true
-    
-    const  { _id, section_name, web_url } = articleClicked
+  openDialog(articleClicked): void {
+    const dialogRef = this.dialog.open(ArticleDialogComponent, {
+      data: articleClicked
+    });
 
-
-    console.log('Infos', _id, section_name)
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
-
-
 
  BuildList() {
     this.apiService.getArticles().subscribe((article: any) => {

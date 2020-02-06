@@ -9,6 +9,7 @@ export class APIService {
 
   baseUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?&fq=news_desk:("Technology""Science")';
   ApiKey = 'api-key=XYpkAwUHjuuhs0NzAGNsguSVwlLCrS0R'
+  pagination = '0'
 
   
   constructor(private http: HttpClient) { }
