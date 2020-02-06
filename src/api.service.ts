@@ -7,12 +7,14 @@ import { from } from 'rxjs';
 })
 export class APIService {
 
-  baseUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?&fq=news_desk:("Technology" "Science")&api-key=XYpkAwUHjuuhs0NzAGNsguSVwlLCrS0R';
+  baseUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?&fq=news_desk:("Technology" "Science")';
+  ApiKey = 'api-key=XYpkAwUHjuuhs0NzAGNsguSVwlLCrS0R'
 
+  
   constructor(private http: HttpClient) { }
 
-  listar () {
-    return this.http.get<any[]>(`${this.baseUrl}`);
+  getArticles () {
+    return this.http.get(`${this.baseUrl}&${this.ApiKey}`);
   }
 
 }

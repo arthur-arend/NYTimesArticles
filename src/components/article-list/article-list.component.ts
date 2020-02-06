@@ -12,13 +12,17 @@ export class ArticleListComponent implements OnInit {
   constructor(private apiService: APIService) { }
 
   ngOnInit() {
-    this.montaListaArtigos();
+    this.BuildList();
   }
 
-  montaListaArtigos() {
-  
-    this.apiService.listar().subscribe(article => this.articles = article)
-    console.log("Articles", this.articles)
+  openModal(){
+    console.log('AEEEEE')
+  }
+
+ BuildList() {
+    this.apiService.getArticles().subscribe((article: any) => {
+      this.articles = article.response.docs;
+    });
   }
 
 }

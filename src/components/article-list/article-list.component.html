@@ -1,4 +1,6 @@
 
-<mat-card *ngFor="let article of articles">
-    <mat-card-subtitle>{{article.response.docs}}</mat-card-subtitle>
+<mat-card (click)="openModal()" *ngFor="let article of articles">
+    <mat-card-title>{{article.headline.main}}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+    <mat-card-content>{{article.snippet}}</mat-card-content>
 </mat-card>
