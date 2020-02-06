@@ -8,6 +8,7 @@ import { APIService } from '../../api.service';
 })
 export class ArticleListComponent implements OnInit {
   articles: Array<any>
+  pageActual: number
   modalShow: boolean
 
   constructor(private apiService: APIService) { }

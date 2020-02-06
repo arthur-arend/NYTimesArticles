@@ -8,6 +8,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ArticleListComponent } from '../components/article-list/article-list.component';
 import { SideMenuComponent } from '../components/side-menu/side-menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     HttpClientModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxPaginationModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 
-<mat-card (click)="modalController(article)" *ngFor="let article of articles">
-    <mat-card-title>{{article.headline.main}}</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
-    <mat-card-content>{{article.snippet}}</mat-card-content>
+<mat-card (click)="modalController(article)" 
+    *ngFor="let article of articles | paginate: { itemsPerPage: 5, currentPage: pageActual }">
+        <mat-card-title>{{article.headline.main}}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-content>{{article.snippet}}</mat-card-content>
 </mat-card>
+<pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
