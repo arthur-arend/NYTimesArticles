@@ -8,16 +8,24 @@ import { APIService } from '../../api.service';
 })
 export class ArticleListComponent implements OnInit {
   articles: Array<any>
+  modalShow: boolean
 
   constructor(private apiService: APIService) { }
 
   ngOnInit() {
     this.BuildList();
   }
+  
+  modalController(articleClicked = <any>[]){
+    this.modalShow = true
+    
+    const  { _id, section_name, web_url } = articleClicked
 
-  openModal(){
-    console.log('AEEEEE')
+
+    console.log('Infos', _id, section_name)
   }
+
+
 
  BuildList() {
     this.apiService.getArticles().subscribe((article: any) => {
