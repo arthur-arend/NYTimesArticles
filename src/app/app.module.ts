@@ -20,7 +20,7 @@ import { MatListModule } from '@angular/material/list';
     AppComponent,
     ArticleListComponent,
     ArticleDialogComponent,
-    MainNavComponent
+    MainNavComponent,
   ],
   imports: [
     BrowserModule,
