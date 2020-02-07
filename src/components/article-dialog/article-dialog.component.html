@@ -1,8 +1,12 @@
-<mat-card-subtitle>{{data.news_desk}}</mat-card-subtitle>
-<h2 mat-dialog-title>{{data.headline.main}}</h2>
 
 <mat-dialog-content>
-    {{data.web_url}}
-    {{data.byline.original}}
+    <mat-card-subtitle>{{data.news_desk}}</mat-card-subtitle>
+    <mat-card-title>{{data.headline.main}}</mat-card-title>
+    <hr/>
+    <h4>{{data.snippet}}</h4>
+
+    <p>Material: {{data.type_of_material}}</p>
+    <p>Autor: {{data.byline.original}}</p>
+    <a mat-button href="{{data.web_url}}"target="_blank">Go to the Article</a>
 </mat-dialog-content>
 

@@ -8,12 +8,19 @@ import { ArticleListComponent } from '../components/article-list/article-list.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ArticleDialogComponent } from '../components/article-dialog/article-dialog.component';
+import { MainNavComponent } from '../components/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleListComponent,
-    ArticleDialogComponent
+    ArticleDialogComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,12 @@ import { ArticleDialogComponent } from '../components/article-dialog/article-dia
     MatCardModule,
     MatDialogModule,
     MatButtonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
     
   ],
   entryComponents:[

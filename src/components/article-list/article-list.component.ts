@@ -10,6 +10,7 @@ import { ArticleDialogComponent } from '../article-dialog/article-dialog.compone
 })
 export class ArticleListComponent implements OnInit {
   articles: Array<any>
+  pageActual: number = 1
   counter: number = 0
 
   constructor(private apiService: APIService, public dialog: MatDialog) { }
@@ -20,6 +21,7 @@ export class ArticleListComponent implements OnInit {
 
   nextPage(){
     this.counter++
+    this.pageActual++
 
     this.BuildList(this.counter)
     console.log(this.counter)
@@ -28,6 +30,7 @@ export class ArticleListComponent implements OnInit {
   previousPage(){
     if(this.counter > 0){
       this.counter--
+      this.pageActual--
       
       this.BuildList(this.counter)
       console.log(this.counter)

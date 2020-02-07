@@ -1,4 +1,22 @@
+.content-page{
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .mat-card{
-    margin: 36px;
-    max-width: 840px;
+    margin: 38px;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.mat-raised-button.mat-button-base{
+    width: 173px;
+    height: 47px;
+    font-size: larger;
+    background-color: #b7b5b5;
 }

@@ -1,8 +1,17 @@
-<mat-card (click)="openDialog(article)" 
-    *ngFor="let article of articles | paginate: { itemsPerPage: 4, currentPage: pageActual }">
-    <mat-card-subtitle>{{article.news_desk}}</mat-card-subtitle>
-    <mat-card-title>{{article.headline.main}}</mat-card-title>
-        <mat-card-content>{{article.snippet}}</mat-card-content>
-</mat-card>
-<button mat-button color="primary" (click)="previousPage()">Previous</button>
-<button mat-button color="primary" (click)="nextPage()">Next</button>
+<div class="content-page">
+    <div class="content-list">
+        <mat-card (click)="openDialog(article)" 
+            *ngFor="let article of articles ">
+        
+            <mat-card-subtitle>{{article.news_desk}}</mat-card-subtitle>
+            <mat-card-title>{{article.headline.main}}</mat-card-title>
+                <mat-card-content>{{article.snippet}}</mat-card-content>
+        
+        </mat-card>
+    </div>
+    <div class="buttons">
+        <button mat-raised-button (click)="previousPage()">Previous</button>
+        <button mat-button disabled>{{pageActual}}</button>
+        <button mat-raised-button (click)="nextPage()">Next</button>
+    </div>
+</div>
